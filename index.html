@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en" data-theme="light">
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
@@ -8,95 +8,46 @@
   <style>
     :root {
       --primary: #004080;
-      --bg: #f9f9f9;
-      --white: #fff;
-      --text: #333;
-      --badge-bg: #e0e7ff;
+      --bg-light: #f9f9f9;
+      --bg-dark: #1a1a1a;
+      --text-light: #333;
+      --text-dark: #eee;
+      --card-light: #fff;
+      --card-dark: #2c2c2c;
+      --badge-light: #e0e7ff;
+      --badge-dark: #4a4a4a;
     }
 
-    * {
-      margin: 0;
-      padding: 0;
-      box-sizing: border-box;
+    [data-theme="light"] {
+      --bg: var(--bg-light);
+      --text: var(--text-light);
+      --card: var(--card-light);
+      --badge: var(--badge-light);
+    }
+
+    [data-theme="dark"] {
+      --bg: var(--bg-dark);
+      --text: var(--text-dark);
+      --card: var(--card-dark);
+      --badge: var(--badge-dark);
     }
 
     body {
       font-family: 'Segoe UI', sans-serif;
       background-color: var(--bg);
       color: var(--text);
+      margin: 0;
     }
 
     header {
       background-color: var(--primary);
       color: white;
-      padding: 40px 20px;
       text-align: center;
+      padding: 40px 20px;
     }
 
     header h1 {
       font-size: 2.8rem;
-    }
-
-    header p {
-      font-size: 1.2rem;
-      color: #cde;
-    }
-
-    .container {
-      max-width: 1000px;
-      margin: auto;
-      padding: 30px 20px;
-    }
-
-    section {
-      margin-bottom: 40px;
-    }
-
-    h2 {
-      font-size: 1.8rem;
-      margin-bottom: 20px;
-      color: var(--primary);
-      border-bottom: 2px solid var(--primary);
-      padding-bottom: 5px;
-    }
-
-    ul {
-      list-style: none;
-      padding-left: 0;
-    }
-
-    li {
-      margin-bottom: 10px;
-    }
-
-    .badge {
-      display: inline-block;
-      background: var(--badge-bg);
-      color: #333;
-      padding: 5px 10px;
-      margin: 5px;
-      border-radius: 20px;
-      font-size: 0.9rem;
-    }
-
-    .project {
-      background-color: var(--white);
-      padding: 20px;
-      border-radius: 10px;
-      box-shadow: 0 2px 8px rgba(0, 0, 0, 0.06);
-      margin-bottom: 20px;
-    }
-
-    .project i {
-      margin-right: 8px;
-      color: var(--primary);
-    }
-
-    .footer {
-      background-color: var(--primary);
-      color: white;
-      text-align: center;
-      padding: 20px;
     }
 
     .icons a {
@@ -110,6 +61,70 @@
       color: #90c9ff;
     }
 
+    .container {
+      max-width: 1000px;
+      margin: auto;
+      padding: 30px 20px;
+    }
+
+    h2 {
+      color: var(--primary);
+      border-bottom: 2px solid var(--primary);
+      padding-bottom: 6px;
+      margin-bottom: 20px;
+    }
+
+    .badge {
+      display: inline-block;
+      background: var(--badge);
+      color: var(--text);
+      padding: 5px 10px;
+      margin: 5px;
+      border-radius: 20px;
+      font-size: 0.85rem;
+    }
+
+    .project, .about, .skills, .education, .experience {
+      background-color: var(--card);
+      padding: 20px;
+      border-radius: 10px;
+      margin-bottom: 20px;
+      box-shadow: 0 2px 6px rgba(0,0,0,0.08);
+    }
+
+    .project h3 i {
+      color: var(--primary);
+      margin-right: 8px;
+    }
+
+    footer {
+      background-color: var(--primary);
+      color: white;
+      text-align: center;
+      padding: 20px;
+    }
+
+    .top-right-buttons {
+      position: absolute;
+      top: 10px;
+      right: 10px;
+    }
+
+    .top-right-buttons button {
+      background: white;
+      color: var(--primary);
+      border: none;
+      padding: 8px 12px;
+      margin-left: 10px;
+      border-radius: 20px;
+      cursor: pointer;
+      font-weight: bold;
+    }
+
+    .top-right-buttons button:hover {
+      background: #d6e9ff;
+    }
+
     @media (max-width: 600px) {
       header h1 {
         font-size: 2rem;
@@ -118,6 +133,11 @@
   </style>
 </head>
 <body>
+
+  <div class="top-right-buttons">
+    <button onclick="toggleTheme()">🌓 Toggle Theme</button>
+    <a href="resume.pdf" download><button><i class="fas fa-download"></i> Resume</button></a>
+  </div>
 
   <header>
     <h1>Uddeshya Mishra</h1>
@@ -130,77 +150,85 @@
   </header>
 
   <div class="container">
-
-    <section>
+    <div class="about">
       <h2><i class="fas fa-user"></i> About Me</h2>
-      <p>
-        Experienced Software Developer with 5+ years in backend and full-stack development. Skilled in .NET Core, SQL, hardware integration, and smart infrastructure systems. Passionate about clean architecture and automation.
-      </p>
-    </section>
+      <p>Experienced software developer with over 5 years of expertise in building scalable and reliable systems in traffic and toll domains, integrating hardware like ECBs, VMS, and working with APIs.</p>
+    </div>
 
-    <section>
+    <div class="education">
       <h2><i class="fas fa-graduation-cap"></i> Education</h2>
       <ul>
-        <li><strong>M.C.A</strong> – Manipal University, Jaipur – 8.2 CGPA</li>
-        <li><strong>B.C.A</strong> – RBMI (MJPRU), Bareilly – 67%</li>
-        <li><strong>12th</strong> – U.P. Board – 81.2%</li>
-        <li><strong>10th</strong> – U.P. Board – 79.83%</li>
+        <li>M.C.A – Manipal University, Jaipur – 8.2 CGPA</li>
+        <li>B.C.A – RBMI (MJPRU), Bareilly – 67%</li>
+        <li>12th – U.P. Board – 81.2%</li>
+        <li>10th – U.P. Board – 79.83%</li>
       </ul>
-    </section>
+    </div>
 
-    <section>
+    <div class="experience">
       <h2><i class="fas fa-briefcase"></i> Work Experience</h2>
-      <p><strong>QuaLiX Information System LLP, Noida</strong><br/>Software Developer (Oct 2019 – Present)</p>
-    </section>
+      <p><strong>QuaLiX Information System LLP, Noida</strong> – Software Developer (Oct 2019 – Present)</p>
+    </div>
 
-    <section>
+    <div class="skills">
       <h2><i class="fas fa-tools"></i> Skills</h2>
-      <div>
-        <span class="badge">.NET Core</span>
-        <span class="badge">C#</span>
-        <span class="badge">NHibernate</span>
-        <span class="badge">SQL Server</span>
-        <span class="badge">MySQL</span>
-        <span class="badge">Fast Report</span>
-        <span class="badge">Angular</span>
-        <span class="badge">HTML/CSS</span>
-        <span class="badge">Python</span>
-        <span class="badge">API Integration</span>
-      </div>
-    </section>
+      <span class="badge">.NET Core</span>
+      <span class="badge">NHibernate</span>
+      <span class="badge">SQL Server</span>
+      <span class="badge">MySQL</span>
+      <span class="badge">Fast Report</span>
+      <span class="badge">Angular</span>
+      <span class="badge">HTML</span>
+      <span class="badge">CSS</span>
+      <span class="badge">Python</span>
+      <span class="badge">API Integration</span>
+    </div>
 
-    <section>
+    <div class="project">
       <h2><i class="fas fa-folder-open"></i> Projects</h2>
 
-      <div class="project">
+      <div>
         <h3><i class="fas fa-road"></i> ATMS – Advanced Traffic Management System</h3>
-        <p>Integrated CCTV, VMS, ECB devices to enable real-time traffic and incident monitoring across highways.</p>
-        <p><strong>Tech:</strong> .NET Core, NHibernate, Fast Report, MySQL</p>
+        <p>Integrated VMS, ECBs, and CCTVs for live incident monitoring and configuration through a centralized platform.</p>
       </div>
 
-      <div class="project">
-        <h3><i class="fas fa-money-bill-wave"></i> TMS – Toll Management System</h3>
-        <p>System to manage toll transactions with banks and system integrators using XML APIs and closed tolling data.</p>
-        <p><strong>Tech:</strong> .NET Core, SQL Server, XML APIs</p>
+      <div>
+        <h3><i class="fas fa-money-check"></i> TMS – Toll Management System</h3>
+        <p>Managed toll collection using system integrator APIs and banking XML APIs, supporting closed tolling projects.</p>
       </div>
 
-      <div class="project">
-        <h3><i class="fas fa-desktop"></i> CMS – Central Monitoring System</h3>
-        <p>Monitors hardware status across systems with real-time alerts, configuration, and central dashboards.</p>
-        <p><strong>Tech:</strong> Angular, SignalR, .NET Core, MySQL</p>
+      <div>
+        <h3><i class="fas fa-eye"></i> CMS – Central Monitoring System</h3>
+        <p>Handled status monitoring and device communication using SignalR and .NET Core backend for smart cities.</p>
       </div>
 
-      <div class="project">
+      <div>
         <h3><i class="fas fa-gamepad"></i> Monkey Minder – Fantasy Cricket Game</h3>
-        <p>Python-based fantasy cricket app with team creation, performance tracking, and score evaluation logic.</p>
-        <p><strong>Tech:</strong> Python, SQLite, Flask</p>
+        <p>Developed a Flask-based cricket fantasy game with score evaluation and team logic.</p>
       </div>
-    </section>
+
+      <div>
+        <h3><i class="fas fa-list"></i> Suggested Mini Projects</h3>
+        <ul>
+          <li>🔒 <strong>Password Generator</strong> – Generates secure, customizable passwords</li>
+          <li>🕐 <strong>To-Do App</strong> – Manage tasks with local storage</li>
+          <li>💬 <strong>Feedback Collector</strong> – Store feedback in a simple SQLite DB</li>
+          <li>🧾 <strong>Expense Tracker</strong> – Track daily expenses with charts</li>
+          <li>📦 <strong>Inventory System</strong> – Track stock with add/edit/delete and filters</li>
+        </ul>
+      </div>
+    </div>
   </div>
 
-  <footer class="footer">
-    &copy; 2025 Uddeshya Mishra | Designed with ❤️
+  <footer>
+    &copy; 2025 Uddeshya Mishra | Built with ❤️ | <a style="color:#fff;" href="https://udddeshya.github.io/portfolio/" target="_blank">GitHub</a>
   </footer>
 
+  <script>
+    function toggleTheme() {
+      const current = document.documentElement.getAttribute("data-theme");
+      document.documentElement.setAttribute("data-theme", current === "light" ? "dark" : "light");
+    }
+  </script>
 </body>
 </html>
