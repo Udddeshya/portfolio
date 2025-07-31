@@ -3,100 +3,159 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-  <title>Your Name | Portfolio</title>
+  <title>Portfolio | Software Developer</title>
   <style>
-    body {
-      font-family: Arial, sans-serif;
-      background-color: #f4f4f4;
+    :root {
+      --primary: #004080;
+      --secondary: #f4f4f4;
+      --text: #333;
+      --card-bg: #fff;
+    }
+
+    * {
       margin: 0;
       padding: 0;
-      color: #333;
+      box-sizing: border-box;
     }
+
+    body {
+      font-family: 'Segoe UI', sans-serif;
+      background-color: var(--secondary);
+      color: var(--text);
+      line-height: 1.6;
+    }
+
     header {
-      background-color: #222;
-      color: white;
-      padding: 2rem;
+      background: var(--primary);
+      color: #fff;
+      padding: 40px 20px;
       text-align: center;
     }
+
+    header h1 {
+      font-size: 2.5rem;
+      margin-bottom: 10px;
+    }
+
+    header p {
+      font-size: 1.2rem;
+      color: #cce0ff;
+    }
+
+    .container {
+      max-width: 1000px;
+      margin: auto;
+      padding: 20px;
+    }
+
     section {
-      max-width: 900px;
-      margin: 2rem auto;
-      padding: 0 1rem;
+      margin-bottom: 40px;
     }
+
     h2 {
-      border-bottom: 2px solid #ddd;
-      padding-bottom: 0.5rem;
+      color: var(--primary);
+      margin-bottom: 15px;
+      border-bottom: 2px solid var(--primary);
+      padding-bottom: 5px;
     }
-    .project {
-      background-color: white;
-      padding: 1rem;
-      margin-bottom: 1.5rem;
-      border-radius: 5px;
-      box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+
+    ul {
+      padding-left: 20px;
     }
-    .project a {
-      color: #007acc;
-      text-decoration: none;
+
+    .project-card {
+      background: var(--card-bg);
+      padding: 20px;
+      border-radius: 8px;
+      box-shadow: 0 2px 6px rgba(0, 0, 0, 0.05);
+      margin-bottom: 20px;
     }
-    .project a:hover {
-      text-decoration: underline;
+
+    .project-card h3 {
+      margin-bottom: 10px;
+      color: var(--primary);
     }
+
+    .project-card p {
+      margin-bottom: 5px;
+    }
+
     footer {
-      background-color: #222;
+      background: var(--primary);
       color: white;
       text-align: center;
-      padding: 1rem;
-      margin-top: 2rem;
+      padding: 15px;
+      font-size: 0.9rem;
+    }
+
+    @media (max-width: 600px) {
+      header h1 {
+        font-size: 2rem;
+      }
     }
   </style>
 </head>
 <body>
-
   <header>
     <h1>Your Name</h1>
-    <p>Full Stack Developer | Open Source Contributor | Tech Enthusiast</p>
+    <p>Software Developer | QuaLiX Information System LLP</p>
   </header>
 
-  <section>
-    <h2>About Me</h2>
-    <p>I’m a software developer with experience in building in-house tools and automation services. Passionate about solving real-world problems using clean and scalable code. Currently focused on backend systems and infrastructure automation.</p>
-  </section>
-
-  <section>
-    <h2>Projects</h2>
-
-    <div class="project">
-      <h3>Certificate Management System</h3>
-      <p>A web-based internal tool to manage certificates across HR, IT, BD, and Purchase teams.</p>
-      <ul>
-        <li>Created a background service to send expiry and renewal email alerts to relevant departments.</li>
-        <li>Implemented role-based access and department-specific filters.</li>
-        <li><strong>Tech Stack:</strong> Django, PostgreSQL, Celery, SMTP, HTML/CSS</li>
-      </ul>
+  <div class="container">
+    <section>
+      <h2>About Me</h2>
       <p>
-        🔗 <a href="#">GitHub Repo</a> |
-        🌐 <a href="#">Live Demo</a>
+        I'm a software developer with over 5 years of experience in building enterprise-level applications and smart system integrations. 
+        Skilled in .NET Core, SQL, hardware integration, and modern web technologies.
       </p>
-    </div>
+    </section>
 
-    <!-- Add more projects similarly -->
-  </section>
+    <section>
+      <h2>Education</h2>
+      <ul>
+        <li>M.C.A – Manipal University, Jaipur – 8.2 CGPA</li>
+        <li>B.C.A – RBMI (MJPRU), Bareilly – 67%</li>
+        <li>12th – U.P. Board – 81.2%</li>
+        <li>10th – U.P. Board – 79.83%</li>
+      </ul>
+    </section>
 
-  <section>
-    <h2>Resume</h2>
-    <p><a href="your_resume.pdf" target="_blank">Download My Resume (PDF)</a></p>
-  </section>
+    <section>
+      <h2>Work Experience</h2>
+      <p><strong>QuaLiX Information System LLP, Noida</strong><br/>Software Developer (Oct 2019 – Present)</p>
+    </section>
 
-  <section>
-    <h2>Contact</h2>
-    <p>Email: <a href="mailto:youremail@example.com">youremail@example.com</a></p>
-    <p>GitHub: <a href="https://github.com/yourusername" target="_blank">github.com/yourusername</a></p>
-    <p>LinkedIn: <a href="https://linkedin.com/in/yourprofile" target="_blank">linkedin.com/in/yourprofile</a></p>
-  </section>
+    <section>
+      <h2>Projects</h2>
+
+      <div class="project-card">
+        <h3>ATMS – Advanced Traffic Management System</h3>
+        <p>Centralized traffic monitoring platform integrating CCTV, ECBs, and VMS devices for real-time incident management.</p>
+        <p><strong>Technologies:</strong> .NET Core, NHibernate, MySQL, Fast Report</p>
+      </div>
+
+      <div class="project-card">
+        <h3>TMS – Toll Management System</h3>
+        <p>Integrated with banks via XML APIs and toll lane data to process payments, manage closed tolling systems, and streamline transactions.</p>
+        <p><strong>Technologies:</strong> .NET Core, SQL Server, XML APIs</p>
+      </div>
+
+      <div class="project-card">
+        <h3>CMS – Central Monitoring System</h3>
+        <p>Web-based system for centralized control and monitoring of multiple hardware devices with alert mechanisms and status reporting.</p>
+        <p><strong>Technologies:</strong> Angular, .NET Core, SignalR, MySQL</p>
+      </div>
+
+      <div class="project-card">
+        <h3>Monkey Minder – Fantasy Cricket Game</h3>
+        <p>Fun and strategic fantasy cricket platform with team creation, player scoring, and performance-based points system.</p>
+        <p><strong>Technologies:</strong> Python, SQLite, Flask</p>
+      </div>
+    </section>
+  </div>
 
   <footer>
-    &copy; 2025 Your Name | Built with HTML & CSS
+    &copy; 2025 Your Name | All Rights Reserved
   </footer>
-
 </body>
 </html>
