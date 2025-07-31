@@ -3,13 +3,15 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-  <title>Portfolio | Software Developer</title>
+  <title>Uddeshya Mishra Portfolio</title>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css"/>
   <style>
     :root {
       --primary: #004080;
-      --secondary: #f4f4f4;
+      --bg: #f9f9f9;
+      --white: #fff;
       --text: #333;
-      --card-bg: #fff;
+      --badge-bg: #e0e7ff;
     }
 
     * {
@@ -20,32 +22,30 @@
 
     body {
       font-family: 'Segoe UI', sans-serif;
-      background-color: var(--secondary);
+      background-color: var(--bg);
       color: var(--text);
-      line-height: 1.6;
     }
 
     header {
-      background: var(--primary);
-      color: #fff;
+      background-color: var(--primary);
+      color: white;
       padding: 40px 20px;
       text-align: center;
     }
 
     header h1 {
-      font-size: 2.5rem;
-      margin-bottom: 10px;
+      font-size: 2.8rem;
     }
 
     header p {
       font-size: 1.2rem;
-      color: #cce0ff;
+      color: #cde;
     }
 
     .container {
       max-width: 1000px;
       margin: auto;
-      padding: 20px;
+      padding: 30px 20px;
     }
 
     section {
@@ -53,39 +53,61 @@
     }
 
     h2 {
+      font-size: 1.8rem;
+      margin-bottom: 20px;
       color: var(--primary);
-      margin-bottom: 15px;
       border-bottom: 2px solid var(--primary);
       padding-bottom: 5px;
     }
 
     ul {
-      padding-left: 20px;
+      list-style: none;
+      padding-left: 0;
     }
 
-    .project-card {
-      background: var(--card-bg);
+    li {
+      margin-bottom: 10px;
+    }
+
+    .badge {
+      display: inline-block;
+      background: var(--badge-bg);
+      color: #333;
+      padding: 5px 10px;
+      margin: 5px;
+      border-radius: 20px;
+      font-size: 0.9rem;
+    }
+
+    .project {
+      background-color: var(--white);
       padding: 20px;
-      border-radius: 8px;
-      box-shadow: 0 2px 6px rgba(0, 0, 0, 0.05);
+      border-radius: 10px;
+      box-shadow: 0 2px 8px rgba(0, 0, 0, 0.06);
       margin-bottom: 20px;
     }
 
-    .project-card h3 {
-      margin-bottom: 10px;
+    .project i {
+      margin-right: 8px;
       color: var(--primary);
     }
 
-    .project-card p {
-      margin-bottom: 5px;
-    }
-
-    footer {
-      background: var(--primary);
+    .footer {
+      background-color: var(--primary);
       color: white;
       text-align: center;
-      padding: 15px;
-      font-size: 0.9rem;
+      padding: 20px;
+    }
+
+    .icons a {
+      color: white;
+      margin: 0 10px;
+      font-size: 1.3rem;
+      transition: color 0.3s;
+    }
+
+    .icons a:hover {
+      color: #90c9ff;
     }
 
     @media (max-width: 600px) {
@@ -96,66 +118,89 @@
   </style>
 </head>
 <body>
+
   <header>
-    <h1>Your Name</h1>
-    <p>Software Developer | QuaLiX Information System LLP</p>
+    <h1>Uddeshya Mishra</h1>
+    <p><i class="fas fa-laptop-code"></i> Software Developer | QuaLiX Information System LLP</p>
+    <div class="icons" style="margin-top: 10px;">
+      <a href="#"><i class="fab fa-linkedin"></i></a>
+      <a href="#"><i class="fab fa-github"></i></a>
+      <a href="mailto:you@example.com"><i class="fas fa-envelope"></i></a>
+    </div>
   </header>
 
   <div class="container">
+
     <section>
-      <h2>About Me</h2>
+      <h2><i class="fas fa-user"></i> About Me</h2>
       <p>
-        I'm a software developer with over 5 years of experience in building enterprise-level applications and smart system integrations. 
-        Skilled in .NET Core, SQL, hardware integration, and modern web technologies.
+        Experienced Software Developer with 5+ years in backend and full-stack development. Skilled in .NET Core, SQL, hardware integration, and smart infrastructure systems. Passionate about clean architecture and automation.
       </p>
     </section>
 
     <section>
-      <h2>Education</h2>
+      <h2><i class="fas fa-graduation-cap"></i> Education</h2>
       <ul>
-        <li>M.C.A – Manipal University, Jaipur – 8.2 CGPA</li>
-        <li>B.C.A – RBMI (MJPRU), Bareilly – 67%</li>
-        <li>12th – U.P. Board – 81.2%</li>
-        <li>10th – U.P. Board – 79.83%</li>
+        <li><strong>M.C.A</strong> – Manipal University, Jaipur – 8.2 CGPA</li>
+        <li><strong>B.C.A</strong> – RBMI (MJPRU), Bareilly – 67%</li>
+        <li><strong>12th</strong> – U.P. Board – 81.2%</li>
+        <li><strong>10th</strong> – U.P. Board – 79.83%</li>
       </ul>
     </section>
 
     <section>
-      <h2>Work Experience</h2>
+      <h2><i class="fas fa-briefcase"></i> Work Experience</h2>
       <p><strong>QuaLiX Information System LLP, Noida</strong><br/>Software Developer (Oct 2019 – Present)</p>
     </section>
 
     <section>
-      <h2>Projects</h2>
+      <h2><i class="fas fa-tools"></i> Skills</h2>
+      <div>
+        <span class="badge">.NET Core</span>
+        <span class="badge">C#</span>
+        <span class="badge">NHibernate</span>
+        <span class="badge">SQL Server</span>
+        <span class="badge">MySQL</span>
+        <span class="badge">Fast Report</span>
+        <span class="badge">Angular</span>
+        <span class="badge">HTML/CSS</span>
+        <span class="badge">Python</span>
+        <span class="badge">API Integration</span>
+      </div>
+    </section>
 
-      <div class="project-card">
-        <h3>ATMS – Advanced Traffic Management System</h3>
-        <p>Centralized traffic monitoring platform integrating CCTV, ECBs, and VMS devices for real-time incident management.</p>
-        <p><strong>Technologies:</strong> .NET Core, NHibernate, MySQL, Fast Report</p>
+    <section>
+      <h2><i class="fas fa-folder-open"></i> Projects</h2>
+
+      <div class="project">
+        <h3><i class="fas fa-road"></i> ATMS – Advanced Traffic Management System</h3>
+        <p>Integrated CCTV, VMS, ECB devices to enable real-time traffic and incident monitoring across highways.</p>
+        <p><strong>Tech:</strong> .NET Core, NHibernate, Fast Report, MySQL</p>
       </div>
 
-      <div class="project-card">
-        <h3>TMS – Toll Management System</h3>
-        <p>Integrated with banks via XML APIs and toll lane data to process payments, manage closed tolling systems, and streamline transactions.</p>
-        <p><strong>Technologies:</strong> .NET Core, SQL Server, XML APIs</p>
+      <div class="project">
+        <h3><i class="fas fa-money-bill-wave"></i> TMS – Toll Management System</h3>
+        <p>System to manage toll transactions with banks and system integrators using XML APIs and closed tolling data.</p>
+        <p><strong>Tech:</strong> .NET Core, SQL Server, XML APIs</p>
       </div>
 
-      <div class="project-card">
-        <h3>CMS – Central Monitoring System</h3>
-        <p>Web-based system for centralized control and monitoring of multiple hardware devices with alert mechanisms and status reporting.</p>
-        <p><strong>Technologies:</strong> Angular, .NET Core, SignalR, MySQL</p>
+      <div class="project">
+        <h3><i class="fas fa-desktop"></i> CMS – Central Monitoring System</h3>
+        <p>Monitors hardware status across systems with real-time alerts, configuration, and central dashboards.</p>
+        <p><strong>Tech:</strong> Angular, SignalR, .NET Core, MySQL</p>
       </div>
 
-      <div class="project-card">
-        <h3>Monkey Minder – Fantasy Cricket Game</h3>
-        <p>Fun and strategic fantasy cricket platform with team creation, player scoring, and performance-based points system.</p>
-        <p><strong>Technologies:</strong> Python, SQLite, Flask</p>
+      <div class="project">
+        <h3><i class="fas fa-gamepad"></i> Monkey Minder – Fantasy Cricket Game</h3>
+        <p>Python-based fantasy cricket app with team creation, performance tracking, and score evaluation logic.</p>
+        <p><strong>Tech:</strong> Python, SQLite, Flask</p>
       </div>
     </section>
   </div>
 
-  <footer>
-    &copy; 2025 Your Name | All Rights Reserved
+  <footer class="footer">
+    &copy; 2025 Uddeshya Mishra | Designed with ❤️
   </footer>
+
 </body>
 </html>
